@@ -90,12 +90,12 @@ end
 def can_destroy_a_single_item
   Movie.create(title: "That One Where the Guy Kicks Another Guy Once")
   movie = Movie.find_by(title: "That One Where the Guy Kicks Another Guy Once")
-  Movie.all.delete(movie)
+  Movie.delete(movie)
 end
 
 def can_destroy_all_items_at_once
   10.times do |i|
     Movie.create(title: "Movie_#{i}")
   end
-  Movie.all.delete_all
+  Movie.delete_all
 end
